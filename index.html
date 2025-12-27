@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simon Petrikov</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Georgia", serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: url("assets/background.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaeaea;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .links {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .links a:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .hint {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="assets/avatar.png" alt="Simon Petrikov" class="avatar">
+
+    <div class="subtitle">
+      Archaeologist · Researcher
+    </div>
+
+    <div class="links">
+      <a href="https://discord.gg/KkjTpQWK2b" target="_blank">
+        💬 Main Discord
+      </a>
+
+      <a href="https://discord.gg/FePzAHpfhT" target="_blank">
+        🧱 Minecraft Server Discord
+      </a>
+  </div>
+
+  <audio id="bg-music" src="assets/music.mp3" loop></audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    let started = false;
+
+    window.addEventListener("click", () => {
+      if (!started) {
+        music.volume = 0.4;
+        music.play().catch(() => {});
+        started = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
